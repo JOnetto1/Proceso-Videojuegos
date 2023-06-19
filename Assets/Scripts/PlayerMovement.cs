@@ -51,10 +51,15 @@ public class PlayerMovement : MonoBehaviour
         {
             SetAnimatorMovement(direction);
         }
+        else
+        {
+            animator.SetLayerWeight(1,0);
+        }
     }
 
     private void SetAnimatorMovement(Vector2 direction)
     {
+        animator.SetLayerWeight(1, 1);
         animator.SetFloat("xDir", direction.x);
         animator.SetFloat("yDir", direction.y);
     }
