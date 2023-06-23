@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             direction += Vector2.left;
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
@@ -40,27 +41,19 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             direction += Vector2.right;
-
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
     }
 
     private void Move()
     {
         transform.Translate(direction * speed * Time.deltaTime);
-        if(direction.x != 0 || direction.y != 0)
-        {
-            SetAnimatorMovement(direction);
-        }
-        else
-        {
-            animator.SetLayerWeight(1,0);
-        }
+        SetAnimatorMovement(direction);
     }
 
     private void SetAnimatorMovement(Vector2 direction)
     {
-        animator.SetLayerWeight(1, 1);
-        animator.SetFloat("xDir", direction.x);
-        animator.SetFloat("yDir", direction.y);
+        //animator.SetLayerWeight(1, 1);
+        animator.SetFloat("mov", direction.magnitude);
     }
 }

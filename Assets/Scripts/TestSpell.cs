@@ -15,8 +15,10 @@ public class TestSpell : MonoBehaviour
         {
            GameObject spell = Instantiate(projectile, transform.position, Quaternion.identity);
            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-           Vector2 direction = mousePos - transform.position;
+           Vector2 myPos = transform.position;
+           Vector2 direction = (mousePos - myPos).normalized;
            spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
+           spell.GetComponent<TestProjectile>().damage = Random.Range(maxDamage, minDamage);
         }    
     }
 }
