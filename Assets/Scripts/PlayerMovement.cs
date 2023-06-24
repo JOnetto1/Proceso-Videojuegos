@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private Vector2 direction;
     private Animator animator;
+    private bool moveUp = false;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow)){
 
             direction += Vector2.up;
+            moveUp = true;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -37,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             direction += Vector2.down;
+            moveUp = false;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -55,5 +58,6 @@ public class PlayerMovement : MonoBehaviour
     {
         //animator.SetLayerWeight(1, 1);
         animator.SetFloat("mov", direction.magnitude);
+        animator.SetBool("movUp", moveUp);
     }
 }

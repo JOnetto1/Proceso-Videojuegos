@@ -2,14 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyReceiveDamage : MonoBehaviour
+public class PlayerStats : MonoBehaviour
 {
+    public static PlayerStats playerStats;
+    public GameObject player;
     public float health;
     public float maxHealth;
-    // Start is called before the first frame update
+
+    void Awake()
+    {
+        if(playerStats != null)
+        {
+            Destroy(playerStats);
+        }
+        else
+        {
+            playerStats = this;
+        }
+        DontDestroyOnLoad(this);
+    }
+
     void Start()
     {
-        health = maxHealth;
+        health = maxHealth;    
     }
 
     public void DealDamage(float damage)
@@ -36,12 +51,7 @@ public class EnemyReceiveDamage : MonoBehaviour
     {
         if(health <= 0)
         {
-            Destroy(gameObject);
+            Destroy(player);
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
