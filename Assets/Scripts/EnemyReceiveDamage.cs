@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyReceiveDamage : MonoBehaviour
 {
     public float health;
     public float maxHealth;
-    // Start is called before the first frame update
+    public GameObject healthBar;
+    public Slider healthBarSlider;
     void Start()
     {
         health = maxHealth;
@@ -14,14 +16,17 @@ public class EnemyReceiveDamage : MonoBehaviour
 
     public void DealDamage(float damage)
     {
+        healthBar.SetActive(true);
         health -= damage;
         CheckDeath();
+        healthBarSlider.value = CalculateHealthPercentage();
     }
 
     public void HealCharacter(float heal)
     {
         health += heal;
         CheckOverheal();
+        healthBarSlider.value = CalculateHealthPercentage();
     }
 
     private void CheckOverheal()
@@ -43,5 +48,10 @@ public class EnemyReceiveDamage : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private float CalculateHealthPercentage()
+    {
+        return (health / maxHealth);
     }
 }
