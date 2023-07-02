@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/DungeonStart.unity
+    guid: 8b8732058d4d04542850fffb5480ba4a
+  - enabled: 1
+    path: Assets/Scenes/Dungeon1.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Dungeon2.unity
+    guid: fffc86c4bf27c9f4f85131c84d3b464a
+  - enabled: 1
+    path: Assets/Scenes/Dungeon3.unity
+    guid: 6504bb37da0a37e42b37f45548d6e5b4
+  - enabled: 1
+    path: Assets/Scenes/DungeonEnd.unity
+    guid: 4ace0ab5e224f7a4aaf2ea35038ce3aa
   m_configObjects: {}

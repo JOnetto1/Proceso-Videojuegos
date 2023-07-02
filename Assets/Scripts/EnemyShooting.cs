@@ -13,13 +13,14 @@ public class EnemyShooting : MonoBehaviour
 
     void Start()
     {
+        player = FindObjectOfType<PlayerMovement>().transform;
         StartCoroutine(ShootPlayer());   
     }
 
     IEnumerator ShootPlayer()
     {
         yield return new WaitForSeconds(cooldown);
-        if(player != null)
+        if(player != null && Vector3.Distance(player.position, this.transform.position) < 50)
         {
             GameObject spell = Instantiate(projectile, transform.position, Quaternion.identity);
             Vector2 myPos = transform.position;

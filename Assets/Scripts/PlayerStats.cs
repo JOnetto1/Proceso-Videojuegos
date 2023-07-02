@@ -33,6 +33,16 @@ public class PlayerStats : MonoBehaviour
         CheckDeath();
     }
 
+    public void AddVentaja(Item.Ventaja ventaja)
+    {
+
+    }
+
+    public void AddDesventaja(Item.Desventaja desventaja)
+    {
+
+    }
+
     public void HealCharacter(float heal)
     {
         health += heal;

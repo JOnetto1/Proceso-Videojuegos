@@ -8,9 +8,9 @@ public class EnemyProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag != "Enemy")
+        if(!collision.CompareTag("Enemy"))
         {
-            if(collision.tag == "Player")
+            if(collision.CompareTag("Player"))
             {
                 PlayerStats.playerStats.DealDamage(damage);
             }
