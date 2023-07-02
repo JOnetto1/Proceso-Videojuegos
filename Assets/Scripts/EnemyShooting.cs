@@ -20,7 +20,7 @@ public class EnemyShooting : MonoBehaviour
     IEnumerator ShootPlayer()
     {
         yield return new WaitForSeconds(cooldown);
-        if(player != null && Vector3.Distance(player.position, this.transform.position) < 50)
+        if(player != null && Vector3.Distance(player.position, this.transform.position) < 50f)
         {
             GameObject spell = Instantiate(projectile, transform.position, Quaternion.identity);
             Vector2 myPos = transform.position;
@@ -28,7 +28,7 @@ public class EnemyShooting : MonoBehaviour
             Vector2 direction = (targetPos - myPos).normalized;
             spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
             spell.GetComponent<EnemyProjectile>().damage = Random.Range(minDamage, maxDamage);
-            StartCoroutine(ShootPlayer());
         }
+        StartCoroutine(ShootPlayer());
     }
 }

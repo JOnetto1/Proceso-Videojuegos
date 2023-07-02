@@ -86,4 +86,8 @@ public class MapController : MonoBehaviour
     {
         
     }
+    public void EndGame()
+    {
+        SceneManager.LoadScene("EndScene");
+    }
 }

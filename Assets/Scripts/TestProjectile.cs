@@ -8,7 +8,7 @@ public class TestProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name != "Player")
+        if(!collision.CompareTag("Player") && !collision.CompareTag("PlayerProjectile"))
         {
             if (collision.GetComponent<EnemyReceiveDamage>() != null)
             {

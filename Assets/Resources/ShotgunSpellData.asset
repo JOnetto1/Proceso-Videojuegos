@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5843e4278afcc44f91c1d1737fbc9a9, type: 3}
+  m_Name: ShotgunSpellData
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 5555224863687101647, guid: 6395223b034198b488917ff9893dd61d, type: 3}
+  minDamage: 10
+  maxDamage: 20
+  projectileForce: 12
+  cooldown: 0.75

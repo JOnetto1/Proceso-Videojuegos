@@ -9,6 +9,7 @@ public class EnemyReceiveDamage : MonoBehaviour
     public float maxHealth;
     public GameObject healthBar;
     public Slider healthBarSlider;
+    public bool isBoss = false;
     void Start()
     {
         health = maxHealth;
@@ -42,6 +43,10 @@ public class EnemyReceiveDamage : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+            if(isBoss)
+            {
+                MapController.instance.EndGame();
+            }
         }
     }
     // Update is called once per frame

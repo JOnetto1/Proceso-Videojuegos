@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4247593330576205583}
   m_Layer: 0
   m_Name: TestSpell
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,3 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396f3b00e53866d4190963391d048f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0

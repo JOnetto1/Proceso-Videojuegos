@@ -8,9 +8,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 direction;
     private Animator animator;
     private bool moveUp = false;
+    private PlayerStats playerStats;
 
     void Start()
     {
+        playerStats = PlayerStats.playerStats;
+        speed = playerStats.movSpeed;
         animator = GetComponent<Animator>();
     }
 
