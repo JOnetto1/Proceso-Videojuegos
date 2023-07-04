@@ -90,4 +90,8 @@ public class MapController : MonoBehaviour
     {
         SceneManager.LoadScene("EndScene");
     }
+    public void LoseGame()
+    {
+        SceneManager.LoadScene("RipScene");
+    }
 }

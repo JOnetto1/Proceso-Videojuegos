@@ -31,7 +31,7 @@ public class PlayerStats : MonoBehaviour
         {
             playerStats = this;
         }
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     void Start()
@@ -103,6 +103,7 @@ public class PlayerStats : MonoBehaviour
         if(health <= 0)
         {
             Destroy(player);
+            MapController.instance.LoseGame();
         }
     }
 }
